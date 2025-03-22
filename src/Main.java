@@ -1,27 +1,41 @@
 public class Main {
     public static void main(String[] args) {
-
         UIFactory factory = new AFactory();
 
+        Button buttonA = factory.createButton("Submit");
+        TextField textFieldA = factory.createTextField("Enter Name");
+        Checkbox checkboxA = factory.createCheckbox("I Agree");
 
-        Button button = factory.createButton("Submit");
-        TextField textField = factory.createTextField("Enter Name");
-        Checkbox checkbox = factory.createCheckbox("I Agree");
+        System.out.println("UI Elements in Style A:");
+        buttonA.display();
+        textFieldA.display();
+        checkboxA.display();
 
+        buttonA.setText("Click Me");
+        textFieldA.setText("Enter Email");
+        checkboxA.setText("I Accept");
 
-        button.display();
-        textField.display();
-        checkbox.display();
+        System.out.println("\nUpdated UI Elements in Style A:");
+        buttonA.display();
+        textFieldA.display();
+        checkboxA.display();
 
+        factory = new BFactory();
 
-        button.setText("Click Me");
-        textField.setText("Enter Email");
-        checkbox.setText("I Accept");
+        Button buttonB = factory.createButton("Submit");
+        TextField textFieldB = factory.createTextField("Enter Address");
+        Checkbox checkboxB = factory.createCheckbox("I Agree");
 
+        System.out.println("\nUI Elements in Style B:");
+        buttonB.display();
+        textFieldB.display();
+        checkboxB.display();
 
-        System.out.println("\nUpdated UI:");
-        button.display();
-        textField.display();
-        checkbox.display();
+        buttonB.setText("Press Me");
+        textFieldB.setText("Enter Zip Code");
+        checkboxB.setText("I Accept");
+
+        System.out.println("\nUpdated UI Elements in Style B:");
+        buttonB.display();
     }
 }
